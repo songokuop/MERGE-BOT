@@ -36,7 +36,7 @@ async def uploadVideo(
                     width=width,
                     duration=duration,
                     thumb=video_thumbnail,
-                    caption=f"`{merged_video_path.rsplit('/',1)[-1]}`\n\nMerged for: {cb.from_user.mention}",
+                    caption=f"`{merged_video_path.rsplit('/',1)[-1]}`\n\n𝖬𝖾𝗋𝗀𝖾𝖽 𝖿𝗈𝗋: {cb.from_user.mention}",
                     progress=prog.progress_for_pyrogram,
                     progress_args=(
                         f"Uploading: `{merged_video_path.rsplit('/',1)[-1]}`",
@@ -49,7 +49,7 @@ async def uploadVideo(
                     chat_id=int(LOGCHANNEL),
                     document=merged_video_path,
                     thumb=video_thumbnail,
-                    caption=f"`{merged_video_path.rsplit('/',1)[-1]}`\n\nMerged for: <a href='tg://user?id={cb.from_user.id}'>{cb.from_user.first_name}</a>",
+                    caption=f"`{merged_video_path.rsplit('/',1)[-1]}`\n\n𝖬𝖾𝗋𝗀𝖾𝖽 𝖿𝗈𝗋: <a href='tg://user?id={cb.from_user.id}'>{cb.from_user.first_name}</a>",
                     progress=prog.progress_for_pyrogram,
                     progress_args=(
                         f"Uploading: `{merged_video_path.rsplit('/',1)[-1]}`",
@@ -99,13 +99,13 @@ async def uploadVideo(
                 )
         except Exception as err:
             LOGGER.info(err)
-            await cb.message.edit("Failed to upload")
+            await cb.message.edit("𝖥𝖺𝗂𝗅𝖾𝖽 𝗍𝗈 𝗎𝗉𝗅𝗈𝖺𝖽")
         if sent_ is not None:
             if Config.LOGCHANNEL is not None:
                 media = sent_.video or sent_.document
                 await sent_.copy(
                     chat_id=int(LOGCHANNEL),
-                    caption=f"`{media.file_name}`\n\nMerged for: <a href='tg://user?id={cb.from_user.id}'>{cb.from_user.first_name}</a>",
+                    caption=f"`{media.file_name}`\n\n𝖬𝖾𝗋𝗀𝖾𝖽 𝖿𝗈𝗋: <a href='tg://user?id={cb.from_user.id}'>{cb.from_user.first_name}</a>",
                 )
 
 
@@ -136,7 +136,7 @@ async def uploadFiles(
                 media = sent_.video or sent_.document
                 await sent_.copy(
                     chat_id=int(LOGCHANNEL),
-                    caption=f"`{media.file_name}`\n\nExtracted by: <a href='tg://user?id={cb.from_user.id}'>{cb.from_user.first_name}</a>",
+                    caption=f"`{media.file_name}`\n\n𝖤𝗑𝗍𝗋𝖺𝖼𝗍𝖾𝖽 𝖻𝗒 : <a href='tg://user?id={cb.from_user.id}'>{cb.from_user.first_name}</a>",
                 )
     except:
         1    
