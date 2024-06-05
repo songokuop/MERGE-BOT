@@ -204,20 +204,20 @@ async def start_handler(c: Client, m: Message):
         user.allowed = True
         user.set()
     res = await m.reply_photo(Config.START_PIC,
-        caption=f"Hi **{m.from_user.first_name}**\n\n ⚡ I am a file/video merger bot\n\n😎 I can merge Telegram files!, And upload it to telegram\n\n**Check /about for more.",
+        caption=f"𝖧𝗂 **{m.from_user.first_name}**\n\n ⚡ 𝖨 𝖺𝗆 𝖺 𝖿𝗂𝗅𝖾/𝗏𝗂𝖽𝖾𝗈 𝗆𝖾𝗋𝗀𝖾𝗋 𝖻𝗈𝗍\n\n😎 𝖨 𝖼𝖺𝗇 𝗆𝖾𝗋𝗀𝖾 𝖳𝖾𝗅𝖾𝗀𝗋𝖺𝗆 𝖿𝗂𝗅𝖾𝗌!, 𝖠𝗇𝖽 𝗎𝗉𝗅𝗈𝖺𝖽 𝗂𝗍 𝗍𝗈 𝗍𝖾𝗅𝖾𝗀𝗋𝖺𝗆\n\n**𝖯𝗈𝗐𝖾𝗋𝖾𝖽 𝖻𝗒 : <a href=https://t.me/Movies_Zone_Media>𝖬𝗈𝗏𝗂𝖾𝗌 𝖹𝗈𝗇𝖾 𝖬𝖾𝖽𝗂𝖺</a>",
 	    quote=True,
         reply_markup=InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("🧑‍💻 𝖣𝖾𝗏𝖾𝗅𝗈𝗉𝖾𝗋", url="https://t.me/Snowball_Official")],
+                [InlineKeyboardButton("🧑‍💻 𝖣𝖾𝗏𝖾𝗅𝗈𝗉𝖾𝗋", url="https://t.me/Mr_Haryanvi_Jaat")],
                 [
                     InlineKeyboardButton(
-                        "⛅ 𝖴𝗉𝖽𝖺𝗍𝖾𝗌", url="https://t.me/Rokubotz"
+                        "⛅ 𝖴𝗉𝖽𝖺𝗍𝖾𝗌", url="https://t.me/Movies_Zone_Media"
                     ),
                     InlineKeyboardButton(
-                        "🌨️ 𝖲𝗎𝗉𝗉𝗈𝗋𝗍", url=f"https://t.me/Team_Roku"
+                        "🌨️ 𝖲𝗎𝗉𝗉𝗈𝗋𝗍", url=f"https://t.me/Movies_Zone_Support"
                     ),
                 ],
-                [InlineKeyboardButton("Close 🔐", callback_data="close")],
+                [InlineKeyboardButton("𝖢𝗅𝗈𝗌𝖾 🔐", callback_data="close")],
             ]
         ),
     )
@@ -231,7 +231,7 @@ async def files_handler(c: Client, m: Message):
     if user_id != int(Config.OWNER):
         if user.allowed is False:
             res = await m.reply_text(
-                text=f"Hi **{m.from_user.first_name}**\n\n 🛡️ Unfortunately you can't use me\n\n**𝖢𝗈𝗇𝗍𝖺𝖼𝗍 ➜ <a href=https://t.me/Snowball_Official>𝖮𝗐𝗇𝖾𝗋</a>** ",
+                text=f"Hi **{m.from_user.first_name}**\n\n 🛡️ Unfortunately you can't use me\n\n**𝖢𝗈𝗇𝗍𝖺𝖼𝗍 ➜ <a href=https://t.me/Mr_Haryanvi_Jaat>𝖮𝗐𝗇𝖾𝗋</a>** ",
                 quote=True,
             )
             return
@@ -239,7 +239,7 @@ async def files_handler(c: Client, m: Message):
         return
     input_ = f"downloads/{str(user_id)}/input.txt"
     if os.path.exists(input_):
-        await m.reply_text("Sorry Bro,\nAlready One process in Progress!\nDon't Spam.")
+        await m.reply_text("𝖲𝗈𝗋𝗋𝗒 𝖡𝗋𝗈\n𝖠𝗅𝗋𝖾𝖺𝖽𝗒 𝖮𝗇𝖾 𝗉𝗋𝗈𝖼𝖾𝗌𝗌 𝗂𝗇 𝖯𝗋𝗈𝗀𝗋𝖾𝗌𝗌!\n𝖣𝗈𝗇'𝗍 𝖲𝗉𝖺𝗆.")
         return
     media = m.video or m.document or m.audio
     if media.file_name is None:
@@ -287,7 +287,7 @@ async def files_handler(c: Client, m: Message):
             )
             return
         editable = await m.reply_text("Please Wait ...", quote=True)
-        MessageText = "Okay,\nNow Send Me Next Video or Press **Merge Now** Button!"
+        MessageText = "𝖮𝗄𝖺𝗒\n𝖭𝗈𝗐 𝖲𝖾𝗇𝖽 𝖬𝖾 𝖭𝖾𝗑𝗍 𝖵𝗂𝖽𝖾𝗈 𝗈𝗋 𝖯𝗋𝖾𝗌𝗌 **𝖬𝖾𝗋𝗀𝖾 𝖭𝗈𝗐** 𝖡𝗎𝗍𝗍𝗈𝗇!"
 
         if queueDB.get(user_id, None) is None:
             queueDB.update({user_id: {"videos": [], "subtitles": [], "audios": []}})
@@ -304,7 +304,7 @@ async def files_handler(c: Client, m: Message):
 
             if len(queueDB.get(user_id)["videos"]) == 1:
                 reply_ = await editable.edit(
-                    "**Send me some more videos to merge them into single file**",
+                    "**𝖲𝖾𝗇𝖽 𝗆𝖾 𝗌𝗈𝗆𝖾 𝗆𝗈𝗋𝖾 𝗏𝗂𝖽𝖾𝗈𝗌 𝗍𝗈 𝗆𝖾𝗋𝗀𝖾 𝗍𝗁𝖾𝗆 𝗂𝗇𝗍𝗈 𝗌𝗂𝗇𝗀𝗅𝖾 𝖿𝗂𝗅𝖾**",
                     reply_markup=InlineKeyboardMarkup(
                         bMaker.makebuttons(["Cancel"], ["cancel"])
                     ),
@@ -500,16 +500,16 @@ async def about_handler(c: Client, m: Message):
         quote=True,
         reply_markup=InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("👨‍💻Developer👨‍💻", url="https://t.me/yashoswalyo")],
+                [InlineKeyboardButton("🧑‍💻 𝖣𝖾𝗏𝖾𝗅𝗈𝗉𝖾𝗋", url="https://t.me/Mr_Haryanvi_Jaat")],
                 [
                     InlineKeyboardButton(
-                        "🏘Source Code🏘", url="https://github.com/yashoswalyo/MERGE-BOT"
+                        "⛅ 𝖴𝗉𝖽𝖺𝗍𝖾𝗌", url="https://t.me/Movies_Zone_Media"
                     ),
                     InlineKeyboardButton(
-                        "🤔Deployed By🤔", url=f"https://t.me/{Config.OWNER_USERNAME}"
+                        "🌨️ 𝖲𝗎𝗉𝗉𝗈𝗋𝗍", url=f"https://t.me/Movies_Zone_Support"
                     ),
                 ],
-                [InlineKeyboardButton("Close 🔐", callback_data="close")],
+                [InlineKeyboardButton("𝖢𝗅𝗈𝗌𝖾 🔐", callback_data="close")],
             ]
         ),
     )
@@ -724,8 +724,8 @@ async def makeButtons(bot: Client, m: Message, db: dict):
                     ]
                 )
 
-    markup.append([InlineKeyboardButton("🔗 Merge Now", callback_data="merge")])
-    markup.append([InlineKeyboardButton("💥 Clear Files", callback_data="cancel")])
+    markup.append([InlineKeyboardButton("🔗 𝖬𝖾𝗋𝗀𝖾 𝖭𝗈𝗐", callback_data="merge")])
+    markup.append([InlineKeyboardButton("💥 𝖢𝗅𝖾𝖺𝗋 𝖥𝗂𝗅𝖾𝗌", callback_data="cancel")])
     return markup
 
 
@@ -753,7 +753,7 @@ if __name__ == "__main__":
         with userBot:
             userBot.send_message(
                 chat_id=int(LOGCHANNEL),
-                text="Bot booted with Premium Account,\n\n  Thanks for using <a href='https://github.com/yashoswalyo/merge-bot'>this repo</a>",
+                text="Bot booted with Premium Account",
                 disable_web_page_preview=True,
             )
             user = userBot.get_me()
