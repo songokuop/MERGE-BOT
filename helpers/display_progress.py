@@ -50,7 +50,7 @@ class Progress:
             [
                 [
                     InlineKeyboardButton(
-                        "⛔ Cancel ⛔",
+                        "❌ 𝖢𝖺𝗇𝖼𝖾𝗅 ❌",
                         callback_data=(
                             f"gUPcancel/{chat_id}/{mes_id}/{from_user}"
                         ).encode("UTF-8"),
@@ -61,7 +61,7 @@ class Progress:
         if self.is_cancelled:
             LOGGER.info("stopping ")
             await self._mess.edit(
-                f"⛔ **Cancelled** ⛔ \n\n `{ud_type}` ({humanbytes(total)})"
+                f"❌ **𝖢𝖺𝗇𝖼𝖾𝗅𝗅𝖾𝖽** ❌ \n\n `{ud_type}` ({humanbytes(total)})"
             )
             await self._client.stop_transmission()
 
@@ -91,7 +91,7 @@ class Progress:
             # cpu = "{psutil.cpu_percent()}%"
             tmp = (
                 progress
-                + "\n**⌧ Total 🗃:**` 〚{1}〛`\n**⌧ Done ✅ :**` 〚{0}〛`\n**⌧ Speed 📊 :** ` 〚{2}/s〛`\n**⌧ ETA 🔃 :**` 〚{3}〛`\n {4}".format(
+                + "**\n╭━━『𝖯𝗋𝗈𝗀𝗋𝖾𝗌𝗌 𝖡𝖺𝗋』━━➣**\n**┣⪼ 🗃️ 𝖲𝗂𝗓𝖾: **{1}\n**┣⪼ ⏳️ 𝖣𝗈𝗇𝖾 : **{0}\n**┣⪼ 🚀 𝖲𝗉𝖾𝖾𝖽: **{2}/s\n**┣⪼ ⏰️ 𝖤𝖳𝖠: **{3} {4}\n**╰━━━━━━━━━━━━━━━➣**".format(
                     humanbytes(current),
                     humanbytes(total),
                     humanbytes(speed),
